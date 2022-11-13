@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include #Importamos include tambien para enlazar la url de la app
 from PrimerSitioDjango.views import *
 
 urlpatterns = [
@@ -23,4 +23,9 @@ urlpatterns = [
     path('hoy/<nombre>', diaHoy),
     path('home/', vista_plantilla),
     path('alumnos/', listado_alumnos),
+    #Importamos los urls de la aplicación appcoder
+    #Colocamos un nombre cualquiera
+    path("coder/", include("appcoder.urls")) #En include debemos poner el nombre de la app y el archivo urls
+    #Cada ruta del url de la app, tendra el prefijo "coder"
+    #por ejemplo http://misitio.com/coder/profesores
 ]
