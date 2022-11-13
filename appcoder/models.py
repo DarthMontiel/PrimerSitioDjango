@@ -6,8 +6,6 @@ class Curso(models.Model): #Heredamos del modulo models -> la clase Model (model
     nombre = models.CharField(max_length=50) #Indicamos que nombre sera un CharField [Texto]
     camada = models.IntegerField() #Sus valores seran enteros [Número]
 
-#Agregar los modelos restantes
-
 class Estudiante(models.Model):
     nombre=models.CharField(max_length=30)
     apellido=models.CharField(max_length=30)
