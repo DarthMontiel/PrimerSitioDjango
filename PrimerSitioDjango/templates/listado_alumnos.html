@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Alumnos</title>
+</head>
+<body>
+
+    {% if tecnologia == "Python" %}
+       <center><h1 style="color: green;">Listado de Alumnos</h1></center>
+    {% else %}
+        <center><H1 style="color: red;"> CURSO DESCONOCIDO </H1></center>
+    {% endif %}
+    <center><h2>Curso: {{tecnologia}}</h2></center>
+    <p>
+        <b>Listado de alumnos: </b>
+        <ul><!--Listas se hacen con ul-->
+            {% for alumno in listado_alumnos %} <!--Abre For-->
+            
+                <li>{{alumno}}</li> <!--Recorre for-->
+
+            {% endfor %} <!--Cierra for-->
+
+        </ul>
+    </p>
+</body>
+</html>
