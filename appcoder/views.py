@@ -5,6 +5,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def inicio(request):
+    cursos = Curso.objets.all()
+
+    
     return render(request, "appcoder/index.html") #Esto es un loader a otro nivel y más corto
 
 def cursos(request):
