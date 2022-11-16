@@ -54,3 +54,15 @@ def creacion_profesores(request):
 
     contexto = {'formulario':formulario}
     return render (request, "appcoder/profesores_formularios.html",contexto)#Como tercer argumento pasamos un diccionario (que es el contexto)
+
+
+
+def buscar_curso(request): #Renderiza formulario
+    return render(request, "appcoder/busqueda_cursos.html")
+
+def resultados_busqueda_cursos(request): #Procesa formulario
+    nombre_curso = request.GET["nombre_curso"]
+    cursos = Curso.objects.filter(nombre__icontains=nombre_curso) #icontains indica que ignore las mayusculas y minusculas
+    return render (request, "appcoder/resultados_busquedas_cursos.html",{"cursos": cursos})
+
+
