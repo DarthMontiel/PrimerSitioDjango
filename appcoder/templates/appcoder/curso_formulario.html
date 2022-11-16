@@ -1,0 +1,15 @@
+{% extends 'appcoder/base.html' %}
+
+{% block contenido %}
+<!--Action es donde le indicamos al navegador a donde enviara la información
+cuando sea presionado el botoón y method indica con qué metodo-->
+<form action="/coder/cursos/crear/" method="post">
+    {% csrf_token %} 
+
+    <p>Curso <input type="text" name="curso"></p>
+    <p>Camada <input type="number" name="camada"></p>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

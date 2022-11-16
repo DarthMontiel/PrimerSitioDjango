@@ -1,0 +1,11 @@
+{% extends 'appcoder/base.html' %}
+
+{% block contenido %}
+
+<form action="" method="post"><!--Si el navegador no encuentra una ruta en el action, envía los datos
+a la misma URL en la que ya estabamos parados de inicio-->
+    {% csrf_token %}
+{{ formulario.as_p }} <!--Usamos esta variable para traer al formulario que creamos en views-->
+<input type="submit" value="Enviar">
+</form>
+{% endblock %}
